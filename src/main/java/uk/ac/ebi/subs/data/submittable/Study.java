@@ -1,4 +1,8 @@
-package uk.ac.ebi.subs.data;
+package uk.ac.ebi.subs.data.submittable;
+
+import uk.ac.ebi.subs.data.component.Publication;
+import uk.ac.ebi.subs.data.component.Attribute;
+import uk.ac.ebi.subs.data.component.Contact;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,10 +15,6 @@ public class Study extends Submittable {
     List<Contact> contactList = new ArrayList<Contact>();
     String studyType;
 
-
-    public Study(String alias, String submittableDomain, String uuid, String title, String description, List<Attribute> attributeList, String status) {
-        super(alias, submittableDomain, uuid, title, description, attributeList, status);
-    }
 
     public Date getReleaseDate() {
         return releaseDate;

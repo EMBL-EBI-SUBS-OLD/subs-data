@@ -1,23 +1,20 @@
-package uk.ac.ebi.subs.data;
+package uk.ac.ebi.subs.data.submittable;
+
+import uk.ac.ebi.subs.data.component.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SequencingAssay extends Assay {
     String sampleName;
-    List<SequencingSubmittableFile> sequencingSubmittableFileList = new ArrayList<SequencingSubmittableFile>();
+    List<LabelledSubmittableFile> labelledSubmittableFileList = new ArrayList<LabelledSubmittableFile>();
     String designDescription;
     String libraryName;
     String librarySource;
     String librarySelection;
     String libraryStrategy;
     String libraryLayout;
-
-
-
-    public SequencingAssay(String alias, String submittableDomain, String uuid, String title, String description, List<Attribute> attributeList, String status, List<Protocol> protocolList, String assayType, Instrument instrument) {
-        super(alias, submittableDomain, uuid, title, description, attributeList, status, protocolList, assayType, instrument);
-    }
+    SequencingInstrument instrument;
 
     public String getSampleName() {
         return sampleName;
@@ -27,12 +24,12 @@ public class SequencingAssay extends Assay {
         this.sampleName = sampleName;
     }
 
-    public List<SequencingSubmittableFile> getSequencingSubmittableFileList() {
-        return sequencingSubmittableFileList;
+    public List<LabelledSubmittableFile> getLabelledSubmittableFileList() {
+        return labelledSubmittableFileList;
     }
 
-    public void setSequencingSubmittableFileList(List<SequencingSubmittableFile> sequencingSubmittableFileList) {
-        this.sequencingSubmittableFileList = sequencingSubmittableFileList;
+    public void setLabelledSubmittableFileList(List<LabelledSubmittableFile> labelledSubmittableFileList) {
+        this.labelledSubmittableFileList = labelledSubmittableFileList;
     }
 
     public String getLibraryName() {
@@ -81,5 +78,14 @@ public class SequencingAssay extends Assay {
 
     public void setDesignDescription(String designDescription) {
         this.designDescription = designDescription;
+    }
+
+    @Override
+    public SequencingInstrument getInstrument() {
+        return instrument;
+    }
+
+    public void setInstrument(SequencingInstrument instrument) {
+        this.instrument = instrument;
     }
 }

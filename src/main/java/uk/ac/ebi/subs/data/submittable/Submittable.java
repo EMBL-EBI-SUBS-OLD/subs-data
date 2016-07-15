@@ -1,8 +1,10 @@
-package uk.ac.ebi.subs.data;
+package uk.ac.ebi.subs.data.submittable;
+
+import uk.ac.ebi.subs.data.component.Attribute;
 
 import java.util.List;
 
-public class Submittable {
+public abstract class Submittable {
     String accession;
     String alias;
     String submittableDomain;
@@ -11,16 +13,6 @@ public class Submittable {
     String description;
     List<Attribute> attributeList;
     String status;
-
-    public Submittable(String alias, String submittableDomain, String uuid, String title, String description, List<Attribute> attributeList, String status) {
-        this.alias = alias;
-        this.submittableDomain = submittableDomain;
-        this.uuid = uuid;
-        this.title = title;
-        this.description = description;
-        this.attributeList = attributeList;
-        this.status = status;
-    }
 
     public String getAccession() {
         return accession;

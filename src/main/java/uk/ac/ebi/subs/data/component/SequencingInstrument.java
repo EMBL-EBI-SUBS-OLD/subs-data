@@ -1,13 +1,8 @@
-package uk.ac.ebi.subs.data;
+package uk.ac.ebi.subs.data.component;
 
-public class Instrument {
+public class SequencingInstrument implements Instrument {
     String name;
     String platform;
-
-    public Instrument(String name, String platform) {
-        this.name = name;
-        this.platform = platform;
-    }
 
     public String getName() {
         return name;
@@ -23,5 +18,10 @@ public class Instrument {
 
     public void setPlatform(String platform) {
         this.platform = platform;
+    }
+
+    @Override
+    public String getDescription(){
+        return this.getName() + ' ' + this.getPlatform();
     }
 }
