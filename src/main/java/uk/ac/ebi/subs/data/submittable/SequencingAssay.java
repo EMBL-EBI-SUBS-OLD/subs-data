@@ -1,9 +1,6 @@
 package uk.ac.ebi.subs.data.submittable;
 
-import uk.ac.ebi.subs.data.component.LabelledSubmittableFile;
-import uk.ac.ebi.subs.data.component.Attribute;
-import uk.ac.ebi.subs.data.component.Instrument;
-import uk.ac.ebi.subs.data.component.Protocol;
+import uk.ac.ebi.subs.data.component.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +14,7 @@ public class SequencingAssay extends Assay {
     String librarySelection;
     String libraryStrategy;
     String libraryLayout;
+    SequencingInstrument instrument;
 
     public String getSampleName() {
         return sampleName;
@@ -80,5 +78,14 @@ public class SequencingAssay extends Assay {
 
     public void setDesignDescription(String designDescription) {
         this.designDescription = designDescription;
+    }
+
+    @Override
+    public SequencingInstrument getInstrument() {
+        return instrument;
+    }
+
+    public void setInstrument(SequencingInstrument instrument) {
+        this.instrument = instrument;
     }
 }

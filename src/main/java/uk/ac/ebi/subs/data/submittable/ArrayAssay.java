@@ -1,24 +1,22 @@
 package uk.ac.ebi.subs.data.submittable;
 
-import uk.ac.ebi.subs.data.component.Attribute;
-import uk.ac.ebi.subs.data.component.Instrument;
-import uk.ac.ebi.subs.data.component.LabelledSubmittableFile;
-import uk.ac.ebi.subs.data.component.Protocol;
+import uk.ac.ebi.subs.data.component.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ArrayAssay extends Assay {
-    String arrayDesign;
+    ArrayInstrument instrument;
     String sample;
     List<LabelledSubmittableFile> fileList = new ArrayList<LabelledSubmittableFile>();
 
-    public String getArrayDesign() {
-        return arrayDesign;
+    @Override
+    public ArrayInstrument getInstrument() {
+        return instrument;
     }
 
-    public void setArrayDesign(String arrayDesign) {
-        this.arrayDesign = arrayDesign;
+    public void setInstrument(ArrayInstrument instrument) {
+        this.instrument = instrument;
     }
 
     public String getSample() {

@@ -1,16 +1,23 @@
 package uk.ac.ebi.subs.data.submittable;
 
-import uk.ac.ebi.subs.data.component.SubmittableFile;
-import uk.ac.ebi.subs.data.component.Attribute;
-import uk.ac.ebi.subs.data.component.Instrument;
-import uk.ac.ebi.subs.data.component.Protocol;
+import uk.ac.ebi.subs.data.component.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MetabolomicsAssay extends Assay {
+    MetabolomicsInstrument instrument;
     SubmittableFile submittableFile;
     List<String> sampleNameList = new ArrayList<String>();
+
+    @Override
+    public MetabolomicsInstrument getInstrument() {
+        return instrument;
+    }
+
+    public void setInstrument(MetabolomicsInstrument instrument) {
+        this.instrument = instrument;
+    }
 
     public SubmittableFile getSubmittableFile() {
         return submittableFile;

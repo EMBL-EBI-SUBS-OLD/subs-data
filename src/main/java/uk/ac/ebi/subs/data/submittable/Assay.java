@@ -11,7 +11,6 @@ public abstract class Assay extends Submittable {
 
     List<Protocol> protocolList = new ArrayList<Protocol>();
     String assayType;
-    Instrument instrument;
 
     public List<Protocol> getProtocolList() {
         return protocolList;
@@ -29,11 +28,7 @@ public abstract class Assay extends Submittable {
         this.assayType = assayType;
     }
 
-    public Instrument getInstrument() {
-        return instrument;
-    }
+    public abstract Instrument getInstrument();
 
-    public void setInstrument(Instrument instrument) {
-        this.instrument = instrument;
-    }
+
 }

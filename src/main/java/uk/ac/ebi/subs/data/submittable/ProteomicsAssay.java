@@ -1,17 +1,24 @@
 package uk.ac.ebi.subs.data.submittable;
 
-import uk.ac.ebi.subs.data.component.SubmittableFile;
-import uk.ac.ebi.subs.data.component.Attribute;
-import uk.ac.ebi.subs.data.component.Instrument;
-import uk.ac.ebi.subs.data.component.Protocol;
+import uk.ac.ebi.subs.data.component.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProteomicsAssay extends Assay {
+    ProteomicsInstrument instrument;
     List<String> sampleNameList = new ArrayList<String>();
     List<SubmittableFile> rawFileList = new ArrayList<SubmittableFile>();
     List<SubmittableFile> processedFileList = new ArrayList<SubmittableFile>();
+
+    @Override
+    public ProteomicsInstrument getInstrument() {
+        return instrument;
+    }
+
+    public void setInstrument(ProteomicsInstrument instrument) {
+        this.instrument = instrument;
+    }
 
     public List<String> getSampleNameList() {
         return sampleNameList;
