@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+group = 'uk.ac.ebi.subs'
+ext.version_base = '1.0.0'
+archivesBaseName = 'data-model'
+version = version_base
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2'
+}
+
+task sourceJar(type: Jar) { from sourceSets.main.allJava }
+
+
+
+
+
+
