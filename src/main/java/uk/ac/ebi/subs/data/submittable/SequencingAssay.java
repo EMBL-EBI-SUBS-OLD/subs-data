@@ -1,6 +1,6 @@
 package uk.ac.ebi.subs.data.submittable;
 
-import uk.ac.ebi.subs.data.component.SequencingSubmittableFile;
+import uk.ac.ebi.subs.data.component.LabelledSubmittableFile;
 import uk.ac.ebi.subs.data.component.Attribute;
 import uk.ac.ebi.subs.data.component.Instrument;
 import uk.ac.ebi.subs.data.component.Protocol;
@@ -10,7 +10,7 @@ import java.util.List;
 
 public class SequencingAssay extends Assay {
     String sampleName;
-    List<SequencingSubmittableFile> sequencingSubmittableFileList = new ArrayList<SequencingSubmittableFile>();
+    List<LabelledSubmittableFile> labelledSubmittableFileList = new ArrayList<LabelledSubmittableFile>();
     String designDescription;
     String libraryName;
     String librarySource;
@@ -32,12 +32,12 @@ public class SequencingAssay extends Assay {
         this.sampleName = sampleName;
     }
 
-    public List<SequencingSubmittableFile> getSequencingSubmittableFileList() {
-        return sequencingSubmittableFileList;
+    public List<LabelledSubmittableFile> getLabelledSubmittableFileList() {
+        return labelledSubmittableFileList;
     }
 
-    public void setSequencingSubmittableFileList(List<SequencingSubmittableFile> sequencingSubmittableFileList) {
-        this.sequencingSubmittableFileList = sequencingSubmittableFileList;
+    public void setLabelledSubmittableFileList(List<LabelledSubmittableFile> labelledSubmittableFileList) {
+        this.labelledSubmittableFileList = labelledSubmittableFileList;
     }
 
     public String getLibraryName() {
