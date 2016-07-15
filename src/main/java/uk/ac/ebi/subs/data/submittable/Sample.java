@@ -1,4 +1,6 @@
-package uk.ac.ebi.subs.data;
+package uk.ac.ebi.subs.data.submittable;
+
+import uk.ac.ebi.subs.data.component.Attribute;
 
 import java.util.ArrayList;
 import java.util.List;

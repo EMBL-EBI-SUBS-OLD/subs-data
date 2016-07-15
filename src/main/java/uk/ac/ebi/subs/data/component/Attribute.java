@@ -1,4 +1,4 @@
-package uk.ac.ebi.subs.data;
+package uk.ac.ebi.subs.data.component;
 
 public interface Attribute {
         String getTagName ();
@@ -6,6 +6,6 @@ public interface Attribute {
         String getTagValue();
         void setTagValue (String tagValue);
         String getUnits();
-        Ontology getOntology ();
-        void setOntology (Ontology ontology);
+        OntologyTerm getOntology ();
+        void setOntology (OntologyTerm ontologyTerm);
 }

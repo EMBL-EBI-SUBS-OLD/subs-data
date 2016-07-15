@@ -1,6 +1,8 @@
-package uk.ac.ebi.subs.data;
+package uk.ac.ebi.subs.data.component;
 
-public interface Ontology {
+public interface OntologyTerm {
+
+
     public String getName ();
     public void setName (String name);
     public String getVersion ();

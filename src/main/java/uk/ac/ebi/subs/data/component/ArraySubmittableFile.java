@@ -1,4 +1,4 @@
-package uk.ac.ebi.subs.data;
+package uk.ac.ebi.subs.data.component;
 
 public class ArraySubmittableFile extends SubmittableFile {
     String sampleName;
