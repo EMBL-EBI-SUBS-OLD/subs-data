@@ -13,17 +13,6 @@ public class ProteomicsAssay extends Assay {
     List<SubmittableFile> rawFileList = new ArrayList<SubmittableFile>();
     List<SubmittableFile> processedFileList = new ArrayList<SubmittableFile>();
 
-    public ProteomicsAssay(String alias, String submittableDomain, String uuid, String title, String description, List<Attribute> attributeList, String status, List<Protocol> protocolList, String assayType, Instrument instrument) {
-        super(alias, submittableDomain, uuid, title, description, attributeList, status, protocolList, assayType, instrument);
-    }
-
-    public ProteomicsAssay(String alias, String submittableDomain, String uuid, String title, String description, List<Attribute> attributeList, String status, List<Protocol> protocolList, String assayType, Instrument instrument, List<String> sampleNameList, List<SubmittableFile> rawFileList, List<SubmittableFile> processedFileList) {
-        super(alias, submittableDomain, uuid, title, description, attributeList, status, protocolList, assayType, instrument);
-        this.sampleNameList = sampleNameList;
-        this.rawFileList = rawFileList;
-        this.processedFileList = processedFileList;
-    }
-
     public List<String> getSampleNameList() {
         return sampleNameList;
     }

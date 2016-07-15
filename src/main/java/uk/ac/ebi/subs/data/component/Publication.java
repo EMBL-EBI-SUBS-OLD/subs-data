@@ -2,9 +2,14 @@ package uk.ac.ebi.subs.data.component;
 
 public class Publication {
     String pubmedId;
+    String doi;
 
-    public Publication(String pubmedId) {
-        this.pubmedId = pubmedId;
+    public String getDoi() {
+        return doi;
+    }
+
+    public void setDoi(String doi) {
+        this.doi = doi;
     }
 
     public String getPubmedId() {

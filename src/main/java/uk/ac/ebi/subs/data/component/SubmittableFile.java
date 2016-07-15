@@ -6,13 +6,6 @@ public class SubmittableFile {
     String checksumMethod;
     String checksum;
 
-    public SubmittableFile(String name, String path, String checksumMethod, String checksum) {
-        this.name = name;
-        this.path = path;
-        this.checksumMethod = checksumMethod;
-        this.checksum = checksum;
-    }
-
     public String getName() {
         return name;
     }

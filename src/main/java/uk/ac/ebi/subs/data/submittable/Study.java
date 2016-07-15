@@ -16,10 +16,6 @@ public class Study extends Submittable {
     String studyType;
 
 
-    public Study(String alias, String submittableDomain, String uuid, String title, String description, List<Attribute> attributeList, String status) {
-        super(alias, submittableDomain, uuid, title, description, attributeList, status);
-    }
-
     public Date getReleaseDate() {
         return releaseDate;
     }

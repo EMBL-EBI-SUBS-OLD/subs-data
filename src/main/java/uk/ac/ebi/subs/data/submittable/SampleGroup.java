@@ -9,10 +9,6 @@ public class SampleGroup  extends Submittable {
 
     List<String> sampleReferenceList = new ArrayList<String>();
 
-    public SampleGroup(String alias, String submittableDomain, String uuid, String title, String description, List<Attribute> attributeList, String status) {
-        super(alias, submittableDomain, uuid, title, description, attributeList, status);
-    }
-
     public List<String> getSampleReferenceList() {
         return sampleReferenceList;
     }

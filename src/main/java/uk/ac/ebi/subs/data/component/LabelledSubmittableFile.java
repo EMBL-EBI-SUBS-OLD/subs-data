@@ -1,22 +1,13 @@
 package uk.ac.ebi.subs.data.component;
 
 public class LabelledSubmittableFile extends SubmittableFile {
-    public String readLabel;
+    public String label;
 
-    public LabelledSubmittableFile(String name, String path, String checksumMethod, String checksum) {
-        super(name, path, checksumMethod, checksum);
+    public String getLabel() {
+        return label;
     }
 
-    public LabelledSubmittableFile(String name, String path, String checksumMethod, String checksum, String readLabel) {
-        super(name, path, checksumMethod, checksum);
-        this.readLabel = readLabel;
-    }
-
-    public String getReadLabel() {
-        return readLabel;
-    }
-
-    public void setReadLabel(String readLabel) {
-        this.readLabel = readLabel;
+    public void setLabel(String label) {
+        this.label = label;
     }
 }

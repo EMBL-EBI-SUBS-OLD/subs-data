@@ -3,11 +3,7 @@ package uk.ac.ebi.subs.data.component;
 public class Protocol {
     String name;
     String description;
-
-    public Protocol(String name, String description) {
-        this.name = name;
-        this.description = description;
-    }
+    String type;
 
     public String getName() {
         return name;
@@ -23,5 +19,13 @@ public class Protocol {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String protocolType) {
+        this.type = protocolType;
     }
 }

@@ -18,12 +18,6 @@ public class SequencingAssay extends Assay {
     String libraryStrategy;
     String libraryLayout;
 
-
-
-    public SequencingAssay(String alias, String submittableDomain, String uuid, String title, String description, List<Attribute> attributeList, String status, List<Protocol> protocolList, String assayType, Instrument instrument) {
-        super(alias, submittableDomain, uuid, title, description, attributeList, status, protocolList, assayType, instrument);
-    }
-
     public String getSampleName() {
         return sampleName;
     }

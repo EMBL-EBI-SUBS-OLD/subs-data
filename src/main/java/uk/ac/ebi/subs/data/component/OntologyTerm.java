@@ -1,12 +1,15 @@
 package uk.ac.ebi.subs.data.component;
 
-public interface OntologyTerm {
+public class OntologyTerm {
+    String ontologyName;
+    String ontologyVersion;
+    String termID;
 
+    public String getOntologyName() {
+        return ontologyName;
+    }
 
-    public String getName ();
-    public void setName (String name);
-    public String getVersion ();
-    public void setVersion (String version);
-    public String getTermID ();
-    public void setTermID (String termID);
+    public void setOntologyName(String ontologyName) {
+        this.ontologyName = ontologyName;
+    }
 }

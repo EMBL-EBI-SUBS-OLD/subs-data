@@ -12,7 +12,19 @@ public class MetabolomicsAssay extends Assay {
     SubmittableFile submittableFile;
     List<String> sampleNameList = new ArrayList<String>();
 
-    public MetabolomicsAssay(String alias, String submittableDomain, String uuid, String title, String description, List<Attribute> attributeList, String status, List<Protocol> protocolList, String assayType, Instrument instrument) {
-        super(alias, submittableDomain, uuid, title, description, attributeList, status, protocolList, assayType, instrument);
+    public SubmittableFile getSubmittableFile() {
+        return submittableFile;
+    }
+
+    public void setSubmittableFile(SubmittableFile submittableFile) {
+        this.submittableFile = submittableFile;
+    }
+
+    public List<String> getSampleNameList() {
+        return sampleNameList;
+    }
+
+    public void setSampleNameList(List<String> sampleNameList) {
+        this.sampleNameList = sampleNameList;
     }
 }

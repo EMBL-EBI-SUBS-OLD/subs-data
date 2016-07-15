@@ -6,20 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sample extends Submittable {
-    int taxonId;
+    Integer taxonId;
     List<SampleLink> sampleLinkList = new ArrayList<SampleLink>();
 
-    public Sample(String alias, String submittableDomain, String uuid, String title, String description, List<Attribute> attributeList, String status) {
-        super(alias, submittableDomain, uuid, title, description, attributeList, status);
+    public Integer getTaxonId() {
+        return taxonId;
+    }
+
+    public void setTaxonId(Integer taxonId) {
+        this.taxonId = taxonId;
     }
 
     class SampleLink {
-
-        public SampleLink(String alias, String accession, String relationshipType) {
-            this.alias = alias;
-            this.accession = accession;
-            this.relationshipType = relationshipType;
-        }
 
         String alias;
         String accession;

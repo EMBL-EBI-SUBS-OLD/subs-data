@@ -4,11 +4,6 @@ public class Instrument {
     String name;
     String platform;
 
-    public Instrument(String name, String platform) {
-        this.name = name;
-        this.platform = platform;
-    }
-
     public String getName() {
         return name;
     }

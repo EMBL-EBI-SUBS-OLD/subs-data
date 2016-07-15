@@ -13,16 +13,6 @@ public class ArrayAssay extends Assay {
     String sample;
     List<LabelledSubmittableFile> fileList = new ArrayList<LabelledSubmittableFile>();
 
-    public ArrayAssay(){
-    }
-
-    public ArrayAssay(String alias, String submittableDomain, String uuid, String title, String description, List<Attribute> attributeList, String status, List<Protocol> protocolList, String assayType, Instrument instrument, String arrayDesign, String sample, List<LabelledSubmittableFile> fileList) {
-        super(alias, submittableDomain, uuid, title, description, attributeList, status, protocolList, assayType, instrument);
-        this.arrayDesign = arrayDesign;
-        this.sample = sample;
-        this.fileList = fileList;
-    }
-
     public String getArrayDesign() {
         return arrayDesign;
     }
