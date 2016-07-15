@@ -12,4 +12,20 @@ public class OntologyTerm {
     public void setOntologyName(String ontologyName) {
         this.ontologyName = ontologyName;
     }
+
+    public String getOntologyVersion() {
+        return ontologyVersion;
+    }
+
+    public void setOntologyVersion(String ontologyVersion) {
+        this.ontologyVersion = ontologyVersion;
+    }
+
+    public String getTermID() {
+        return termID;
+    }
+
+    public void setTermID(String termID) {
+        this.termID = termID;
+    }
 }
