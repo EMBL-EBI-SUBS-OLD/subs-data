@@ -18,6 +18,11 @@ task wrapper(type: Wrapper) {
 
 task sourceJar(type: Jar) { from sourceSets.main.allJava }
 
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
 
 
 
