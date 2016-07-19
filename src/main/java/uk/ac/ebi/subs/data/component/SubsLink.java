@@ -1,11 +1,13 @@
 package uk.ac.ebi.subs.data.component;
 
+import org.springframework.data.annotation.Id;
 
 public class SubsLink {
     String alias;
     String accession;
     String archive;
-    String uuid;
+
+    @Id String uuid;
 
     public String getArchive() {
         return archive;
