@@ -4,15 +4,15 @@ package uk.ac.ebi.subs.data.component;
 public class SubsLink {
     String alias;
     String accession;
-    String namespace;
+    String archive;
     String uuid;
 
-    public String getNamespace() {
-        return namespace;
+    public String getArchive() {
+        return archive;
     }
 
-    public void setNamespace(String namespace) {
-        this.namespace = namespace;
+    public void setArchive(String archive) {
+        this.archive = archive;
     }
 
     public String getUuid() {
