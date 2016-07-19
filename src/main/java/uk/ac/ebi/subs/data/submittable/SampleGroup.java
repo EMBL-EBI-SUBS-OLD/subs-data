@@ -1,19 +1,20 @@
 package uk.ac.ebi.subs.data.submittable;
 
 import uk.ac.ebi.subs.data.component.Attribute;
+import uk.ac.ebi.subs.data.component.SubsLink;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SampleGroup  extends Submittable {
 
-    List<String> sampleReferenceList = new ArrayList<String>();
+    List<SubsLink> sampleRefs = new ArrayList<SubsLink>();
 
-    public List<String> getSampleReferenceList() {
-        return sampleReferenceList;
+    public List<SubsLink> getSampleRefs() {
+        return sampleRefs;
     }
 
-    public void setSampleReferenceList(List<String> sampleReferenceList) {
-        this.sampleReferenceList = sampleReferenceList;
+    public void setSampleRefs(List<SubsLink> sampleRefs) {
+        this.sampleRefs = sampleRefs;
     }
 }

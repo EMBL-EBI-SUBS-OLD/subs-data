@@ -8,7 +8,7 @@ import java.util.List;
 public class MetabolomicsAssay extends Assay {
     MetabolomicsInstrument instrument;
     SubmittableFile submittableFile;
-    List<String> sampleNameList = new ArrayList<String>();
+    List<SubsLink> sampleRefs = new ArrayList<SubsLink>();
 
     @Override
     public MetabolomicsInstrument getInstrument() {
@@ -27,11 +27,11 @@ public class MetabolomicsAssay extends Assay {
         this.submittableFile = submittableFile;
     }
 
-    public List<String> getSampleNameList() {
-        return sampleNameList;
+    public List<SubsLink> getSampleRefs() {
+        return sampleRefs;
     }
 
-    public void setSampleNameList(List<String> sampleNameList) {
-        this.sampleNameList = sampleNameList;
+    public void setSampleRefs(List<SubsLink> sampleRefs) {
+        this.sampleRefs = sampleRefs;
     }
 }

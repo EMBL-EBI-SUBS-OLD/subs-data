@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ProteomicsAssay extends Assay {
     ProteomicsInstrument instrument;
-    List<String> sampleNameList = new ArrayList<String>();
+    List<SubsLink> sampleRefs = new ArrayList<SubsLink>();
     List<SubmittableFile> rawFileList = new ArrayList<SubmittableFile>();
     List<SubmittableFile> processedFileList = new ArrayList<SubmittableFile>();
 
@@ -20,12 +20,12 @@ public class ProteomicsAssay extends Assay {
         this.instrument = instrument;
     }
 
-    public List<String> getSampleNameList() {
-        return sampleNameList;
+    public List<SubsLink> getSampleRefs() {
+        return sampleRefs;
     }
 
-    public void setSampleNameList(List<String> sampleNameList) {
-        this.sampleNameList = sampleNameList;
+    public void setSampleRefs(List<SubsLink> sampleRefs) {
+        this.sampleRefs = sampleRefs;
     }
 
     public List<SubmittableFile> getRawFileList() {

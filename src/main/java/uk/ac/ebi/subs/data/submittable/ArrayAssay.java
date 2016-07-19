@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ArrayAssay extends Assay {
     ArrayInstrument instrument;
-    String sample;
+    SubsLink sampleRef;
     List<LabelledSubmittableFile> fileList = new ArrayList<LabelledSubmittableFile>();
 
     @Override
@@ -19,12 +19,12 @@ public class ArrayAssay extends Assay {
         this.instrument = instrument;
     }
 
-    public String getSample() {
-        return sample;
+    public SubsLink getSampleRef() {
+        return sampleRef;
     }
 
-    public void setSample(String sample) {
-        this.sample = sample;
+    public void setSampleRef(SubsLink sampleRef) {
+        this.sampleRef = sampleRef;
     }
 
     public List<LabelledSubmittableFile> getFileList() {
