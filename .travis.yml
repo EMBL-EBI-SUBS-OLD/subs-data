@@ -8,4 +8,7 @@ jdk:
 
 install: true
 
-script: ./gradlew jar && ./gradlew test
+script: ./gradlew check
+
+after_success:
+- ./gradlew cobertura coveralls
