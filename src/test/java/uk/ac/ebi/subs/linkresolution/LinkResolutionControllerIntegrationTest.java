@@ -43,7 +43,7 @@ public class LinkResolutionControllerIntegrationTest {
         this.subsLink = new SubsLink();
         this.subsLink.setUuid("f3dc49d4-12eb-4993-9ce2-d8cdf6ae7592");
         this.subsLink.setAccession("A1");
-        this.subsLink.setNamespace("A test archive");
+        this.subsLink.setArchive("A test archive");
 
         this.localLinkResolutionService.storeSubsLink(this.subsLink);
 
@@ -62,7 +62,7 @@ public class LinkResolutionControllerIntegrationTest {
 
         assertThat(actualSubsLink.getUuid(), equalTo(expectedSubsLink.getUuid()));
         assertThat(actualSubsLink.getAccession(), equalTo(expectedSubsLink.getAccession()));
-        assertThat(actualSubsLink.getNamespace(), equalTo(expectedSubsLink.getNamespace()));
+        assertThat(actualSubsLink.getArchive(), equalTo(expectedSubsLink.getArchive()));
     }
 
 }
