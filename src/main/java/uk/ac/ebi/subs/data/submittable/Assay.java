@@ -3,14 +3,23 @@ package uk.ac.ebi.subs.data.submittable;
 import uk.ac.ebi.subs.data.component.Attribute;
 import uk.ac.ebi.subs.data.component.Instrument;
 import uk.ac.ebi.subs.data.component.Protocol;
+import uk.ac.ebi.subs.data.component.SubsLink;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Assay extends Submittable {
-
+    SubsLink studyRef = new SubsLink();
     List<Protocol> protocolList = new ArrayList<Protocol>();
     String assayType;
+
+    public SubsLink getStudyRef() {
+        return studyRef;
+    }
+
+    public void setStudyRef(SubsLink studyRef) {
+        this.studyRef = studyRef;
+    }
 
     public List<Protocol> getProtocolList() {
         return protocolList;

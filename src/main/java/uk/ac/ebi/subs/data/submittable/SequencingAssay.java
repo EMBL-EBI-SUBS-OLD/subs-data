@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SequencingAssay extends Assay {
-    String sampleName;
+    SubsLink sampleRef;
     List<LabelledSubmittableFile> labelledSubmittableFileList = new ArrayList<LabelledSubmittableFile>();
     String designDescription;
     String libraryName;
@@ -16,12 +16,12 @@ public class SequencingAssay extends Assay {
     String libraryLayout;
     SequencingInstrument instrument;
 
-    public String getSampleName() {
-        return sampleName;
+    public SubsLink getSampleRef() {
+        return sampleRef;
     }
 
-    public void setSampleName(String sampleName) {
-        this.sampleName = sampleName;
+    public void setSampleRef(SubsLink sampleRef) {
+        this.sampleRef = sampleRef;
     }
 
     public List<LabelledSubmittableFile> getLabelledSubmittableFileList() {
