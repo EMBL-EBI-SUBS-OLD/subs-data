@@ -30,12 +30,7 @@ public class LinkResolutionControllerIntegrationTest {
     @Value("${local.server.port}")
     private int port;
 
-    private URL base;
-    private RestTemplate template;
-
     private RemoteLinkResolutionServiceImpl remoteLinkResolutionService;
-    @Autowired @Qualifier("LocalLinkResolutionService") private LinkResolutionService localLinkResolutionService;
-
     private SubsLink subsLink;
 
     @Before
@@ -45,17 +40,15 @@ public class LinkResolutionControllerIntegrationTest {
         this.subsLink.setAccession("A1");
         this.subsLink.setArchive("A test archive");
 
-        this.localLinkResolutionService.storeSubsLink(this.subsLink);
-
         this.remoteLinkResolutionService = new RemoteLinkResolutionServiceImpl();
-        this.base = new URL("http://localhost:" + port + "/link");
-        template = new TestRestTemplate();
-        this.remoteLinkResolutionService.setBase(this.base);
-        this.remoteLinkResolutionService.setRestTemplate(this.template);
+        this.remoteLinkResolutionService.setBase(new URL("http://localhost:" + port + "/link"));
+        this.remoteLinkResolutionService.setRestTemplate(new TestRestTemplate());
     }
 
     @Test
     public void getUuid() throws Exception {
+        remoteLinkResolutionService.storeSubsLink(this.subsLink);
+
         SubsLink expectedSubsLink = this.subsLink;
 
         SubsLink actualSubsLink = this.remoteLinkResolutionService.fetchSubsLink(expectedSubsLink.getUuid());
