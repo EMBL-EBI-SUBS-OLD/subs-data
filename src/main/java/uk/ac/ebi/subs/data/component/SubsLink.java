@@ -41,4 +41,13 @@ public class SubsLink {
         this.accession = accession;
     }
 
+    @Override
+    public String toString() {
+        return "SubsLink{" +
+                "alias='" + alias + '\'' +
+                ", accession='" + accession + '\'' +
+                ", archive='" + archive + '\'' +
+                ", uuid='" + uuid + '\'' +
+                '}';
+    }
 }
