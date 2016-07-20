@@ -1,4 +1,4 @@
-Code base for the EBI Wide Submissions Glue Project
+subs-data is the core API for the EMBL-EBI Unified submission interface (USI). 
 
 ## Building
 
