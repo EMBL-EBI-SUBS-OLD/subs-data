@@ -54,6 +54,7 @@ public abstract class AbstractAssay implements Submittable {
         return uuid;
     }
 
+    @Override
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

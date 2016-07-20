@@ -52,6 +52,7 @@ public class Submission implements Submittable {
         return uuid;
     }
 
+    @Override
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

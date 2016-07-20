@@ -51,6 +51,7 @@ public class Sample implements Submittable {
         return uuid;
     }
 
+    @Override
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }

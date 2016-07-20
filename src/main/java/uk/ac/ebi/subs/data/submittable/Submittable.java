@@ -12,6 +12,7 @@ public interface Submittable {
     String getSubmittableDomain();
 
     String getUuid();
+    void setUuid(String uuid);
 
     String getTitle();
 
