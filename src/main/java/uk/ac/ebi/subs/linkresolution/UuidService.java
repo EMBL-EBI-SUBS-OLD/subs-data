@@ -2,7 +2,6 @@ package uk.ac.ebi.subs.linkresolution;
 
 
 import org.springframework.stereotype.Service;
-import uk.ac.ebi.subs.data.component.SubsLink;
 import uk.ac.ebi.subs.data.submittable.Submittable;
 
 import java.util.UUID;
