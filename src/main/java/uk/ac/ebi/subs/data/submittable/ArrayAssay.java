@@ -5,7 +5,7 @@ import uk.ac.ebi.subs.data.component.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArrayAssay extends Assay {
+public class ArrayAssay extends AbstractAssay {
     ArrayInstrument instrument;
     SubsLink sampleRef;
     List<LabelledSubmittableFile> fileList = new ArrayList<LabelledSubmittableFile>();

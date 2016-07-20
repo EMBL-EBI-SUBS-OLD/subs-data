@@ -1,12 +1,10 @@
 package uk.ac.ebi.subs.data.submittable;
 
 import uk.ac.ebi.subs.data.component.Attribute;
-import uk.ac.ebi.subs.data.component.SampleRelationship;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Sample implements Submittable {
+public abstract class AbstractSubmission implements Submittable{
     String accession;
     String alias;
     String submittableDomain;
@@ -15,9 +13,6 @@ public class Sample implements Submittable {
     String description;
     List<Attribute> attributeList;
     String status;
-
-    Integer taxonId;
-    List<SampleRelationship> sampleRelationships = new ArrayList<SampleRelationship>();
 
     @Override
     public String getAccession() {
@@ -90,21 +85,5 @@ public class Sample implements Submittable {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public Integer getTaxonId() {
-        return taxonId;
-    }
-
-    public void setTaxonId(Integer taxonId) {
-        this.taxonId = taxonId;
-    }
-
-    public List<SampleRelationship> getSampleRelationships() {
-        return sampleRelationships;
-    }
-
-    public void setSampleRelationships(List<SampleRelationship> sampleRelationships) {
-        this.sampleRelationships = sampleRelationships;
     }
 }
