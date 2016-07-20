@@ -1,7 +1,17 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.6.RELEASE")
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
 
 group = 'uk.ac.ebi.subs'
 ext.version_base = '1.0.0'
@@ -12,18 +22,29 @@ configurations.all {
     resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.2'
+jar {
+    baseName = 'subs-data'
+    version =  '1.0.0'
 }
 
-task sourceJar(type: Jar) { from sourceSets.main.allJava }
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenLocal()
     mavenCentral()
 }
 
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2'
+}
 
 
 
