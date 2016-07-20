@@ -5,7 +5,7 @@ import uk.ac.ebi.subs.data.component.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SequencingAssay extends Assay {
+public class SequencingAssay extends AbstractAssay {
     SubsLink sampleRef;
     List<LabelledSubmittableFile> labelledSubmittableFileList = new ArrayList<LabelledSubmittableFile>();
     String designDescription;

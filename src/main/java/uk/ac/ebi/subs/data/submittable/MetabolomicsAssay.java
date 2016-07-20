@@ -5,7 +5,7 @@ import uk.ac.ebi.subs.data.component.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MetabolomicsAssay extends Assay {
+public class MetabolomicsAssay extends AbstractAssay {
     MetabolomicsInstrument instrument;
     SubmittableFile submittableFile;
     List<SubsLink> sampleRefs = new ArrayList<SubsLink>();

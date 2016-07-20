@@ -8,7 +8,7 @@ import uk.ac.ebi.subs.data.component.SubsLink;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Assay implements Submittable {
+public abstract class AbstractAssay implements Submittable {
     String accession;
     String alias;
     String submittableDomain;
