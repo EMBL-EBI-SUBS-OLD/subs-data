@@ -57,3 +57,4 @@ configurations.all {
 }
 
 cobertura.coverageFormats = ['html', 'xml'] // coveralls plugin depends on xml format report
+cobertura.coverageIgnoreTrivial = true // do not worry about getters and setters
