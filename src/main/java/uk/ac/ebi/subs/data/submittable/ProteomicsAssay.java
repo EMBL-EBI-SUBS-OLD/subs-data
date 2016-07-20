@@ -5,7 +5,7 @@ import uk.ac.ebi.subs.data.component.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProteomicsAssay extends Assay {
+public class ProteomicsAssay extends AbstractAssay {
     ProteomicsInstrument instrument;
     List<SubsLink> sampleRefs = new ArrayList<SubsLink>();
     List<SubmittableFile> rawFileList = new ArrayList<SubmittableFile>();

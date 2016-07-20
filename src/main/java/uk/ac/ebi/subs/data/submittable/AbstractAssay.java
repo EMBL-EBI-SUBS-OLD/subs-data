@@ -1,12 +1,14 @@
 package uk.ac.ebi.subs.data.submittable;
 
 import uk.ac.ebi.subs.data.component.Attribute;
-import uk.ac.ebi.subs.data.component.SampleRelationship;
+import uk.ac.ebi.subs.data.component.Instrument;
+import uk.ac.ebi.subs.data.component.Protocol;
+import uk.ac.ebi.subs.data.component.SubsLink;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sample implements Submittable {
+public abstract class AbstractAssay implements Submittable {
     String accession;
     String alias;
     String submittableDomain;
@@ -16,8 +18,9 @@ public class Sample implements Submittable {
     List<Attribute> attributeList;
     String status;
 
-    Integer taxonId;
-    List<SampleRelationship> sampleRelationships = new ArrayList<SampleRelationship>();
+    SubsLink studyRef = new SubsLink();
+    List<Protocol> protocolList = new ArrayList<Protocol>();
+    String assayType;
 
     @Override
     public String getAccession() {
@@ -92,19 +95,31 @@ public class Sample implements Submittable {
         this.status = status;
     }
 
-    public Integer getTaxonId() {
-        return taxonId;
+    public SubsLink getStudyRef() {
+        return studyRef;
     }
 
-    public void setTaxonId(Integer taxonId) {
-        this.taxonId = taxonId;
+    public void setStudyRef(SubsLink studyRef) {
+        this.studyRef = studyRef;
     }
 
-    public List<SampleRelationship> getSampleRelationships() {
-        return sampleRelationships;
+    public List<Protocol> getProtocolList() {
+        return protocolList;
     }
 
-    public void setSampleRelationships(List<SampleRelationship> sampleRelationships) {
-        this.sampleRelationships = sampleRelationships;
+    public void setProtocolList(List<Protocol> protocolList) {
+        this.protocolList = protocolList;
     }
+
+    public String getAssayType() {
+        return assayType;
+    }
+
+    public void setAssayType(String assayType) {
+        this.assayType = assayType;
+    }
+
+    public abstract Instrument getInstrument();
+
+
 }
