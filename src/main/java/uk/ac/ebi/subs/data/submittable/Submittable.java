@@ -4,77 +4,20 @@ import uk.ac.ebi.subs.data.component.Attribute;
 
 import java.util.List;
 
-public abstract class Submittable {
-    String accession;
-    String alias;
-    String submittableDomain;
-    String uuid;
-    String title;
-    String description;
-    List<Attribute> attributeList;
-    String status;
+public interface Submittable {
+    String getAccession();
 
-    public String getAccession() {
-        return accession;
-    }
+    String getAlias();
 
-    public void setAccession(String accession) {
-        this.accession = accession;
-    }
+    String getSubmittableDomain();
 
-    public String getAlias() {
-        return alias;
-    }
+    String getUuid();
 
-    public void setAlias(String alias) {
-        this.alias = alias;
-    }
+    String getTitle();
 
-    public String getSubmittableDomain() {
-        return submittableDomain;
-    }
+    String getDescription();
 
-    public void setSubmittableDomain(String submittableDomain) {
-        this.submittableDomain = submittableDomain;
-    }
+    List<Attribute> getAttributeList();
 
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public List<Attribute> getAttributeList() {
-        return attributeList;
-    }
-
-    public void setAttributeList(List<Attribute> attributeList) {
-        this.attributeList = attributeList;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
+    String getStatus();
 }
