@@ -1,8 +1,6 @@
 package uk.ac.ebi.subs.data.submittable;
 
 import uk.ac.ebi.subs.data.AbstractSubsEntity;
-import uk.ac.ebi.subs.data.component.Attribute;
-import uk.ac.ebi.subs.data.component.Term;
 import uk.ac.ebi.subs.data.component.SampleLink;
 
 import java.util.ArrayList;
@@ -10,7 +8,8 @@ import java.util.List;
 
 public class Sample extends AbstractSubsEntity {
     List<SampleLink> sampleLinks = new ArrayList<>();
-    Attribute taxon = new Attribute();
+    Integer taxonId;
+    String taxon;
 
     public List<SampleLink> getSampleLinks() {
         return sampleLinks;
@@ -20,11 +19,19 @@ public class Sample extends AbstractSubsEntity {
         this.sampleLinks = sampleLinks;
     }
 
-    public Attribute getTaxon() {
+    public Integer getTaxonId() {
+        return taxonId;
+    }
+
+    public void setTaxonId(Integer taxonId) {
+        this.taxonId = taxonId;
+    }
+
+    public String getTaxon() {
         return taxon;
     }
 
-    public void setTaxon(Attribute taxon) {
+    public void setTaxon(String taxon) {
         this.taxon = taxon;
     }
 }
