@@ -3,6 +3,7 @@ package uk.ac.ebi.subs.linkresolution;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
+import uk.ac.ebi.subs.data.AbstractSubsEntity;
 import uk.ac.ebi.subs.data.component.SubsLink;
 
 @RestController
@@ -18,8 +19,8 @@ public class LinkResolutionController {
     }
 
     @RequestMapping(value = "/link", method = RequestMethod.PUT)
-    public void storeLink(@RequestBody SubsLink link) {
-        linkResolutionService.storeSubsLink(link);
+    public void storeUuid(@RequestBody AbstractSubsEntity subsEntity) {
+        linkResolutionService.storeSubsLink(subsEntity);
     }
 
 

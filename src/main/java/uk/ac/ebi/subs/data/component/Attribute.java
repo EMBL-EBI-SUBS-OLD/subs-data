@@ -4,7 +4,7 @@ public class Attribute {
         String tagName;
         String tagValue;
         String units;
-        OntologyTerm ontologyTerm;
+        Term term;
 
         public String getTagName() {
                 return tagName;
@@ -30,11 +30,11 @@ public class Attribute {
                 this.units = units;
         }
 
-        public OntologyTerm getOntologyTerm() {
-                return ontologyTerm;
+        public Term getTerm() {
+                return term;
         }
 
-        public void setOntologyTerm(OntologyTerm ontologyTerm) {
-                this.ontologyTerm = ontologyTerm;
+        public void setTerm(Term term) {
+                this.term = term;
         }
 }
