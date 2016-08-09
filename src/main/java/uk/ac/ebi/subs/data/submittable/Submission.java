@@ -8,15 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Submission {
-    List<AbstractSubsEntity> submissionItems = new ArrayList<AbstractSubsEntity>();
+    List<Submittable> submissionItems = new ArrayList<Submittable>();
     Submitter submitter = new Submitter();
     Domain domain = new Domain();
 
-    public List<AbstractSubsEntity> getSubmissionItems() {
+    public List<Submittable> getSubmissionItems() {
         return submissionItems;
     }
 
-    public void setSubmissionItems(List<AbstractSubsEntity> submissionItems) {
+    public void setSubmissionItems(List<Submittable> submissionItems) {
         this.submissionItems = submissionItems;
     }
 
