@@ -1,12 +1,13 @@
 package uk.ac.ebi.subs.data.submittable;
 
 
+import uk.ac.ebi.subs.data.AbstractSubsEntity;
 import uk.ac.ebi.subs.data.component.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Study implements Publications, Protocols, Contacts {
+public class Study extends AbstractSubsEntity implements Publications, Protocols, Contacts {
     List<Publication> publications = new ArrayList<Publication>();
     List<Protocol> protocols = new ArrayList<Protocol>();
     List<Contact> contacts = new ArrayList<Contact>();

@@ -1,5 +1,6 @@
 package uk.ac.ebi.subs.data.submittable;
 
+import uk.ac.ebi.subs.data.AbstractSubsEntity;
 import uk.ac.ebi.subs.data.component.File;
 import uk.ac.ebi.subs.data.component.Files;
 import uk.ac.ebi.subs.data.component.SubsLink;
@@ -7,7 +8,7 @@ import uk.ac.ebi.subs.data.component.SubsLink;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AssayData implements Files {
+public class AssayData extends AbstractSubsEntity implements Files {
 
     SubsLink assayRef = new SubsLink();
     SubsLink sampleRef = new SubsLink();
