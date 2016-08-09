@@ -19,8 +19,8 @@ public class LinkResolutionController {
     }
 
     @RequestMapping(value = "/link", method = RequestMethod.PUT)
-    public void storeUuid(@RequestBody AbstractSubsEntity subsEntity) {
-        linkResolutionService.storeSubsLink(subsEntity);
+    public void storeUuid(@RequestBody SubsLink subsLink) {
+        linkResolutionService.storeSubsLink(subsLink);
     }
 
 

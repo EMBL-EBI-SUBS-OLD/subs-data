@@ -5,6 +5,7 @@ import static org.junit.Assert.assertThat;
 
 import java.net.URL;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,6 +21,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
 import uk.ac.ebi.subs.Application;
 import uk.ac.ebi.subs.data.component.SubsLink;
+import uk.ac.ebi.subs.data.submittable.Study;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
@@ -30,24 +32,37 @@ public class LinkResolutionControllerIntegrationTest {
     @Value("${local.server.port}")
     private int port;
 
+    @Autowired private UuidService uuidService;
+    @Autowired private LinkResolutionRepository linkResolutionRepository;
+
     private RemoteLinkResolutionServiceImpl remoteLinkResolutionService;
+    private Study study;
     private SubsLink subsLink;
 
     @Before
     public void setUp() throws Exception {
-        this.subsLink = new SubsLink();
-        this.subsLink.setUuid("f3dc49d4-12eb-4993-9ce2-d8cdf6ae7592");
-        this.subsLink.setAccession("A1");
-        this.subsLink.setArchive("A test archive");
+        this.study = new Study();
+
+        uuidService.addUuid(study);
+
+        study.setAccession("A1");
+        study.setArchive("A test archive");
+
+        this.subsLink = study.asLink();
 
         this.remoteLinkResolutionService = new RemoteLinkResolutionServiceImpl();
         this.remoteLinkResolutionService.setBase(new URL("http://localhost:" + port + "/link"));
         this.remoteLinkResolutionService.setRestTemplate(new TestRestTemplate());
     }
 
+    @After
+    public void tearDown() throws Exception {
+        linkResolutionRepository.delete(this.subsLink);
+    }
+
     @Test
     public void getUuid() throws Exception {
-        remoteLinkResolutionService.storeSubsLink(this.subsLink);
+        remoteLinkResolutionService.storeSubsLink(study);
 
         SubsLink expectedSubsLink = this.subsLink;
 

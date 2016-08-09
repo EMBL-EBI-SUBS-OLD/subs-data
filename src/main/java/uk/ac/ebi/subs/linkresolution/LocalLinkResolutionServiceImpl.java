@@ -20,7 +20,7 @@ public class LocalLinkResolutionServiceImpl implements LinkResolutionService {
 
     @Override
     public void storeSubsLink(AbstractSubsEntity subsEntity) {
-        linkResolutionRepository.save(subsEntity.asLink());
+        this.storeSubsLink(subsEntity.asLink());
     }
 
     @Override

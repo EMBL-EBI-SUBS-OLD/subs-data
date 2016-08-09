@@ -16,7 +16,6 @@ public class RemoteLinkResolutionServiceImpl implements LinkResolutionService {
 
     @Override
     public SubsLink fetchSubsLink(String uuid) {
-
         SubsLink link = restTemplate.getForObject(base + "/" + uuid, SubsLink.class);
         return link;
 
