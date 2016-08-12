@@ -5,6 +5,7 @@ import uk.ac.ebi.subs.data.AbstractSubsEntity;
 import uk.ac.ebi.subs.data.component.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Study extends AbstractSubsEntity implements Publications, Protocols, Contacts {
@@ -13,6 +14,7 @@ public class Study extends AbstractSubsEntity implements Publications, Protocols
     List<Contact> contacts = new ArrayList<Contact>();
 
     SubsLink projectRef = new SubsLink();
+    Date releaseDate = new Date();
 
     @Override
     public List<Publication> getPublications() {
@@ -50,5 +52,13 @@ public class Study extends AbstractSubsEntity implements Publications, Protocols
 
     public void setProjectRef(SubsLink projectRef) {
         this.projectRef = projectRef;
+    }
+
+    public Date getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
     }
 }
