@@ -5,16 +5,16 @@ import org.springframework.data.annotation.Id;
 public class SubsLink {
     String alias;
     String accession;
-    String archive;
+    String realm;
 
     @Id String uuid;
 
-    public String getArchive() {
-        return archive;
+    public String getRealm() {
+        return realm;
     }
 
-    public void setArchive(String archive) {
-        this.archive = archive;
+    public void setRealm(String realm) {
+        this.realm = realm;
     }
 
     public String getUuid() {
@@ -46,7 +46,7 @@ public class SubsLink {
         return "SubsLink{" +
                 "alias='" + alias + '\'' +
                 ", accession='" + accession + '\'' +
-                ", archive='" + archive + '\'' +
+                ", realm='" + realm + '\'' +
                 ", uuid='" + uuid + '\'' +
                 '}';
     }

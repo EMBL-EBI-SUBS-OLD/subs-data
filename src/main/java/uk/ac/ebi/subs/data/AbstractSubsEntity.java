@@ -1,10 +1,7 @@
 package uk.ac.ebi.subs.data;
 
 
-import uk.ac.ebi.subs.data.component.Attribute;
-import uk.ac.ebi.subs.data.component.Attributes;
-import uk.ac.ebi.subs.data.component.Domain;
-import uk.ac.ebi.subs.data.component.SubsLink;
+import uk.ac.ebi.subs.data.component.*;
 import uk.ac.ebi.subs.data.submittable.Submittable;
 
 import java.util.ArrayList;
@@ -19,6 +16,7 @@ public abstract class AbstractSubsEntity implements Attributes, Submittable {
     String alias;
     String status;
     Domain domain;
+    Realm realm;
 
     String title;
     String description;
@@ -112,6 +110,15 @@ public abstract class AbstractSubsEntity implements Attributes, Submittable {
 
     public void setDomain(Domain domain) {
         this.domain = domain;
+    }
+
+    @Override
+    public Realm getRealm() {
+        return realm;
+    }
+
+    public void setRealm(Realm realm) {
+        this.realm = realm;
     }
 
     public SubsLink asLink(){

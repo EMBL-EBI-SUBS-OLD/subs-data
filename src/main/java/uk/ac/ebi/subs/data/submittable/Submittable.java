@@ -2,6 +2,7 @@ package uk.ac.ebi.subs.data.submittable;
 
 import uk.ac.ebi.subs.data.component.Attribute;
 import uk.ac.ebi.subs.data.component.Domain;
+import uk.ac.ebi.subs.data.component.Realm;
 
 import java.util.List;
 
@@ -22,4 +23,6 @@ public interface Submittable {
     List<Attribute> getAttributes();
 
     String getStatus();
+
+    Realm getRealm();
 }
