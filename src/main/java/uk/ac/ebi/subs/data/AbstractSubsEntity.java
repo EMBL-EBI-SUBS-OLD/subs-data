@@ -12,7 +12,6 @@ public abstract class AbstractSubsEntity implements Attributes, Submittable {
     String type;
     String uuid;
     String accession;
-    String archive;
     String alias;
     String status;
     Domain domain;
@@ -47,14 +46,6 @@ public abstract class AbstractSubsEntity implements Attributes, Submittable {
 
     public void setAccession(String accession) {
         this.accession = accession;
-    }
-
-    public String getArchive() {
-        return archive;
-    }
-
-    public void setArchive(String archive) {
-        this.archive = archive;
     }
 
     @Override
@@ -125,8 +116,11 @@ public abstract class AbstractSubsEntity implements Attributes, Submittable {
         SubsLink subsLink = new SubsLink();
         subsLink.setAccession(this.accession);
         subsLink.setUuid(this.uuid);
-        subsLink.setArchive(this.archive);
         subsLink.setAlias(this.alias);
+
+        if (this.realm != null){
+            subsLink.setRealm(this.realm.toString());
+        }
         return subsLink;
     }
 }

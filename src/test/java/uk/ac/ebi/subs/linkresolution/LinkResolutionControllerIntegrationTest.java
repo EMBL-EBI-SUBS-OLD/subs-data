@@ -20,6 +20,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
 import uk.ac.ebi.subs.Application;
+import uk.ac.ebi.subs.data.component.Realm;
 import uk.ac.ebi.subs.data.component.SubsLink;
 import uk.ac.ebi.subs.data.submittable.Study;
 
@@ -46,7 +47,7 @@ public class LinkResolutionControllerIntegrationTest {
         uuidService.addUuid(study);
 
         study.setAccession("A1");
-        study.setArchive("A test archive");
+        study.setRealm(Realm.Usi);
 
         this.subsLink = study.asLink();
 
@@ -70,7 +71,7 @@ public class LinkResolutionControllerIntegrationTest {
 
         assertThat(actualSubsLink.getUuid(), equalTo(expectedSubsLink.getUuid()));
         assertThat(actualSubsLink.getAccession(), equalTo(expectedSubsLink.getAccession()));
-        assertThat(actualSubsLink.getArchive(), equalTo(expectedSubsLink.getArchive()));
+        assertThat(actualSubsLink.getRealm(), equalTo(expectedSubsLink.getRealm()));
     }
 
 }
