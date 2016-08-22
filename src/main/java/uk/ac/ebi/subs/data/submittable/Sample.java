@@ -1,95 +1,22 @@
 package uk.ac.ebi.subs.data.submittable;
 
-import uk.ac.ebi.subs.data.component.Attribute;
-import uk.ac.ebi.subs.data.component.SampleRelationship;
+import uk.ac.ebi.subs.data.AbstractSubsEntity;
+import uk.ac.ebi.subs.data.component.SampleLink;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sample implements Submittable {
-    String accession;
-    String alias;
-    String submittableDomain;
-    String uuid;
-    String title;
-    String description;
-    List<Attribute> attributeList;
-    String status;
-
+public class Sample extends AbstractSubsEntity {
+    List<SampleLink> sampleLinks = new ArrayList<>();
     Integer taxonId;
-    List<SampleRelationship> sampleRelationships = new ArrayList<SampleRelationship>();
+    String taxon;
 
-    @Override
-    public String getAccession() {
-        return accession;
+    public List<SampleLink> getSampleLinks() {
+        return sampleLinks;
     }
 
-    public void setAccession(String accession) {
-        this.accession = accession;
-    }
-
-    @Override
-    public String getAlias() {
-        return alias;
-    }
-
-    public void setAlias(String alias) {
-        this.alias = alias;
-    }
-
-    @Override
-    public String getSubmittableDomain() {
-        return submittableDomain;
-    }
-
-    public void setSubmittableDomain(String submittableDomain) {
-        this.submittableDomain = submittableDomain;
-    }
-
-    @Override
-    public String getUuid() {
-        return uuid;
-    }
-
-    @Override
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
-    @Override
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    @Override
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    @Override
-    public List<Attribute> getAttributeList() {
-        return attributeList;
-    }
-
-    public void setAttributeList(List<Attribute> attributeList) {
-        this.attributeList = attributeList;
-    }
-
-    @Override
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
+    public void setSampleLinks(List<SampleLink> sampleLinks) {
+        this.sampleLinks = sampleLinks;
     }
 
     public Integer getTaxonId() {
@@ -100,11 +27,11 @@ public class Sample implements Submittable {
         this.taxonId = taxonId;
     }
 
-    public List<SampleRelationship> getSampleRelationships() {
-        return sampleRelationships;
+    public String getTaxon() {
+        return taxon;
     }
 
-    public void setSampleRelationships(List<SampleRelationship> sampleRelationships) {
-        this.sampleRelationships = sampleRelationships;
+    public void setTaxon(String taxon) {
+        this.taxon = taxon;
     }
 }

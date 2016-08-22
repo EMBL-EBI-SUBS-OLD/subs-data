@@ -1,100 +1,57 @@
 package uk.ac.ebi.subs.data.submittable;
 
-import uk.ac.ebi.subs.data.component.Publication;
-import uk.ac.ebi.subs.data.component.Attribute;
-import uk.ac.ebi.subs.data.component.Contact;
+
+import uk.ac.ebi.subs.data.AbstractSubsEntity;
+import uk.ac.ebi.subs.data.component.*;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Study implements Submittable {
-    String accession;
-    String alias;
-    String submittableDomain;
-    String uuid;
-    String title;
-    String description;
-    List<Attribute> attributeList;
-    String status;
+public class Study extends AbstractSubsEntity implements Publications, Protocols, Contacts {
+    List<Publication> publications = new ArrayList<Publication>();
+    List<Protocol> protocols = new ArrayList<Protocol>();
+    List<Contact> contacts = new ArrayList<Contact>();
 
-    Date releaseDate;
-    List<Publication> publicationList = new ArrayList<Publication>();
-    String parentProject = null;
-    List<Contact> contactList = new ArrayList<Contact>();
-    String studyType;
+    SubsLink projectRef = new SubsLink();
+    Date releaseDate = new Date();
 
     @Override
-    public String getAccession() {
-        return accession;
-    }
-
-    public void setAccession(String accession) {
-        this.accession = accession;
+    public List<Publication> getPublications() {
+        return publications;
     }
 
     @Override
-    public String getAlias() {
-        return alias;
-    }
-
-    public void setAlias(String alias) {
-        this.alias = alias;
+    public void setPublications(List<Publication> publications) {
+        this.publications = publications;
     }
 
     @Override
-    public String getSubmittableDomain() {
-        return submittableDomain;
-    }
-
-    public void setSubmittableDomain(String submittableDomain) {
-        this.submittableDomain = submittableDomain;
+    public List<Protocol> getProtocols() {
+        return protocols;
     }
 
     @Override
-    public String getUuid() {
-        return uuid;
+    public void setProtocols(List<Protocol> protocols) {
+        this.protocols = protocols;
     }
 
     @Override
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public List<Contact> getContacts() {
+        return contacts;
     }
 
     @Override
-    public String getTitle() {
-        return title;
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public SubsLink getProjectRef() {
+        return projectRef;
     }
 
-    @Override
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    @Override
-    public List<Attribute> getAttributeList() {
-        return attributeList;
-    }
-
-    public void setAttributeList(List<Attribute> attributeList) {
-        this.attributeList = attributeList;
-    }
-
-    @Override
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
+    public void setProjectRef(SubsLink projectRef) {
+        this.projectRef = projectRef;
     }
 
     public Date getReleaseDate() {
@@ -103,37 +60,5 @@ public class Study implements Submittable {
 
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
-    }
-
-    public List<Publication> getPublicationList() {
-        return publicationList;
-    }
-
-    public void setPublicationList(List<Publication> publicationList) {
-        this.publicationList = publicationList;
-    }
-
-    public String getParentProject() {
-        return parentProject;
-    }
-
-    public void setParentProject(String parentProject) {
-        this.parentProject = parentProject;
-    }
-
-    public List<Contact> getContactList() {
-        return contactList;
-    }
-
-    public void setContactList(List<Contact> contactList) {
-        this.contactList = contactList;
-    }
-
-    public String getStudyType() {
-        return studyType;
-    }
-
-    public void setStudyType(String studyType) {
-        this.studyType = studyType;
     }
 }

@@ -52,9 +52,6 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.2'
 }
 
-configurations.all {
-    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-}
 
 cobertura.coverageFormats = ['html', 'xml'] // coveralls plugin depends on xml format report
 cobertura.coverageIgnoreTrivial = true // do not worry about getters and setters

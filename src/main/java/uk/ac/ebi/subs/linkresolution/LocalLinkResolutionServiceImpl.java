@@ -2,6 +2,7 @@ package uk.ac.ebi.subs.linkresolution;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import uk.ac.ebi.subs.data.AbstractSubsEntity;
 import uk.ac.ebi.subs.data.component.SubsLink;
 
 import java.util.HashMap;
@@ -18,7 +19,13 @@ public class LocalLinkResolutionServiceImpl implements LinkResolutionService {
     }
 
     @Override
-    public void storeSubsLink(SubsLink link) {
-        linkResolutionRepository.save(link);
+    public void storeSubsLink(AbstractSubsEntity subsEntity) {
+        this.storeSubsLink(subsEntity.asLink());
     }
+
+    @Override
+    public void storeSubsLink(SubsLink subsLink) {
+        linkResolutionRepository.save(subsLink);
+    }
+
 }

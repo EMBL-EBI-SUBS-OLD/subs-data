@@ -1,7 +1,7 @@
 package uk.ac.ebi.subs.data.component;
 
 
-public class ProteomicsInstrument implements Instrument {
+public class Domain {
     String name;
 
     public String getName() {
@@ -11,10 +11,4 @@ public class ProteomicsInstrument implements Instrument {
     public void setName(String name) {
         this.name = name;
     }
-
-    @Override
-    public String getDescription(){
-        return this.getName();
-    }
-
 }

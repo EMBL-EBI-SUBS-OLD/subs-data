@@ -1,6 +1,8 @@
 package uk.ac.ebi.subs.data.submittable;
 
 import uk.ac.ebi.subs.data.component.Attribute;
+import uk.ac.ebi.subs.data.component.Domain;
+import uk.ac.ebi.subs.data.component.Realm;
 
 import java.util.List;
 
@@ -9,7 +11,7 @@ public interface Submittable {
 
     String getAlias();
 
-    String getSubmittableDomain();
+    Domain getDomain();
 
     String getUuid();
     void setUuid(String uuid);
@@ -18,7 +20,9 @@ public interface Submittable {
 
     String getDescription();
 
-    List<Attribute> getAttributeList();
+    List<Attribute> getAttributes();
 
     String getStatus();
+
+    Realm getRealm();
 }

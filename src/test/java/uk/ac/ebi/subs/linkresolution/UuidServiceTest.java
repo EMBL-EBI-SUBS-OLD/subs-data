@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import uk.ac.ebi.subs.Application;
-import uk.ac.ebi.subs.data.submittable.SampleGroup;
+import uk.ac.ebi.subs.data.submittable.Analysis;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
@@ -18,8 +18,7 @@ public class UuidServiceTest {
 
     @Test
     public void setUuid(){
-        SampleGroup sampleGroup = new SampleGroup();
-        sampleGroup.setAlias("test_group_1");
+        Analysis sampleGroup = new Analysis();
 
         assertThat(sampleGroup.getUuid(),nullValue());
 
@@ -32,8 +31,8 @@ public class UuidServiceTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void setUuidWithAccessionPresent(){
-        SampleGroup sampleGroup = new SampleGroup();
-        sampleGroup.setAlias("test_group_2");
+        Analysis sampleGroup = new Analysis();
+
         sampleGroup.setAccession("SG2");
 
         assertThat(sampleGroup.getUuid(),nullValue());
